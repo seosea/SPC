@@ -17,7 +17,7 @@ public class IntroActivity extends AppCompatActivity {
         startLoading();
     }
 
-    //로딩창 3000ms
+    //인트로 화면 3000ms후, Main 화면 (MainActivity) 이동
     private void startLoading() {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

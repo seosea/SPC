@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.widget.Toast;
 
 public class BackPressCloseHandler {
-    private long backKeyPressedTime = 0;
+    private long backKeyPressedTime = 0; // 뒤로가기 누른 횟수
     private Toast toast;
 
     private Activity activity;
@@ -14,6 +14,7 @@ public class BackPressCloseHandler {
     }
 
     public void onBackPressed() {
+        // 뒤로가기를 2초 안에 2번 누를 경우 앱 종료
         if (System.currentTimeMillis() > backKeyPressedTime + 2000) {
             backKeyPressedTime = System.currentTimeMillis();
             showGuide();

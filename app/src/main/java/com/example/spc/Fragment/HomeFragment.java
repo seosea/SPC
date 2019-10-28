@@ -43,11 +43,14 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         initView(view);
+        // default값 (25,25,25,25)
         setView(25,25,25,25);
 
+        // 센서값 callback
         MainActivity.SensorCallBack sensorCallBack = new MainActivity.SensorCallBack() {
             @Override
             public void updateNumber() {
+                // 센서 값 지정
                 setView(Constant.doubleValue[0],Constant.doubleValue[3],Constant.doubleValue[1],Constant.doubleValue[2]);
             }
         };
@@ -56,6 +59,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    // view 초기화
     private void initView(View view){
         tvPosition = view.findViewById(R.id.tv_position_home);
 
@@ -73,12 +77,15 @@ public class HomeFragment extends Fragment {
         tvGood = view.findViewById(R.id.tv_good);
     }
 
+    // 센서 값 view 전달
     private void setView(double leftLeg, double leftHip, double rightLeg, double rightHip) {
+        // text 지정
         tvLeftLeg.setText(leftLeg + "%");
         tvLeftHip.setText(leftHip + "%");
         tvRightLeg.setText(rightLeg + "%");
         tvRightHip.setText(rightHip + "%");
 
+        // 각 수치에 따른 색상 지정
         if (leftLeg < 17.99) rlLeftLeg.setBackgroundResource(R.color.c0_18);
         else if (leftLeg < 19.49) rlLeftLeg.setBackgroundResource(R.color.c18_19);
         else if (leftLeg < 21.99) rlLeftLeg.setBackgroundResource(R.color.c19_22);
@@ -119,30 +126,34 @@ public class HomeFragment extends Fragment {
         else if (rightHip < 29.99) rlRightHip.setBackgroundResource(R.color.c29_30);
         else rlRightHip.setBackgroundResource(R.color.c30_100);
 
+        // 4 구역이 valance 경우
         if(22<leftLeg && leftLeg<27.99
             && 22<leftHip && leftHip<27.99
             && 22<rightLeg && rightLeg<27.99
             && 22<rightHip && rightHip<27.99){
             tvGood.setVisibility(View.VISIBLE);
-            llNotGood.setVisibility(View.INVISIBLE);
+            llNotGood.setVisibility(View.INVISIBLE); // 상단 메시지 제거 (자세가 ~~ 치우쳤습니다)
         } else {
             tvGood.setVisibility(View.GONE);
             llNotGood.setVisibility(View.VISIBLE);
         }
 
+        // map 리스트에 4구역의 값 저장
         Map<String, Double> map = new HashMap<>();
         map.put("좌측 다리", leftLeg);
         map.put("좌측 엉덩이", leftHip);
         map.put("우측 다리", rightLeg);
         map.put("우측 엉덩이", rightHip);
 
+        // 4구역 값을 정렬
         Iterator it = sortByValue(map).iterator();
 
+        // 가장 첫 번째 값 (=가장 큰 값=가장 치우친 부분) 출력
         String temp = (String) it.next();
         tvPosition.setText(temp);
     }
 
-    // 정렬
+    // 4구역 값 크기 순으로 정렬
     public static List sortByValue(final Map map) {
         List<String> list = new ArrayList();
         list.addAll(map.keySet());
