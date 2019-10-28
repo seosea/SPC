@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    tools:context=".Activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageButton
+            android:id="@+id/btn_info"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@color/colorWhite"
+            android:src="@drawable/ic_info" />
+
+        <TextView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="SPC"
+            android:textColor="@color/colorMain"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <com.kyleduo.switchbutton.SwitchButton
+            android:id="@+id/btn_alarm"
+            style="@style/SwitchButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:kswTintColor="@color/colorMain"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/btn_alarm"
+            android:text="진동"
+            android:textColor="@color/colorGray"
+            android:layout_centerVertical="true"/>
+
+        <!--ImageButton
+            android:id="@+id/btn_alarm"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_alarm_on" /-->
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorLightGray"/>
+
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/box_button_background"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_home_white" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_video"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/colorWhite"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_video_black" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/btn_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/colorWhite"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_timer_black" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>

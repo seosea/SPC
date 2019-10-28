@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_not_good"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/table"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자세가 " />
+
+        <TextView
+            android:id="@+id/tv_position_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="우측 다리" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로 치우쳤습니다!" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center">
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_good"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c22_28_valance"
+            android:gravity="center"
+            android:text="Good"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_left_leg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@color/colorLightGray"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="좌측 다리"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_left_leg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="10%"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_right_leg"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@color/colorGray"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="우측 다리"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_right_leg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="20%"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_left_hip"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@color/colorDarkGray"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="좌측 엉덩이"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_left_hip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="30%"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_right_hip"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@color/colorNavy"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="우측 엉덩이"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tv_right_hip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="40%"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
